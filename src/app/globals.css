@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .headerTopMenu {
+    @apply flex items-center px-1  border-r-[1px] border-gray-400 pl-2 pr-6;
+  }
+}
