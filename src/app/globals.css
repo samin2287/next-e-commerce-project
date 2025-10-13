@@ -1,7 +1,16 @@
 @import "tailwindcss";
-@tailwind base;
-@tailwind components;
+/* @import "tailwindcss/preflight"; */
 @tailwind utilities;
+
+@theme {
+  --color-themeColor: #0c55aa;
+  --color-lightBg: #f4f7f9;
+  --color-themeWhite: #ffffff;
+  --color-lightYellow: #ffd43a;
+  --color-borderColor: #eaebed;
+  --color-skyColor: #0989ff;
+  --color-lightText: #55585b;
+}
 
 @layer components {
   .headerTopMenu {
