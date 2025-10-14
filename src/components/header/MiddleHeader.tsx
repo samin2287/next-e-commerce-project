@@ -6,7 +6,7 @@ import SearchInput from "./SearchInput";
 import Link from "next/link";
 import { FaUserCircle } from "react-icons/fa";
 import HeaderIcons from "./HeaderIcons";
-import { IoMenu } from "react-icons/io5";
+import MobileNavigation from "./MobileNavigation";
 
 const MiddleHeader = () => {
   return (
@@ -28,13 +28,7 @@ const MiddleHeader = () => {
           </Link>
           <HeaderIcons />
         </div>
-        <div className="md:hidden">
-          <Link href="/signin" className="flex gap-2">
-            <div className="text-3xl  ">
-              <IoMenu />
-            </div>
-          </Link>
-        </div>
+        <MobileNavigation />
       </Container>
     </div>
   );
