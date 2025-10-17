@@ -5,6 +5,7 @@ import { Button, Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
 import { IoClose, IoMenu } from "react-icons/io5";
 import Link from "next/link";
 import { navItems } from "@/constants";
+import SocialLink from "../SocialLink";
 const MobileNavigation = () => {
   let [isOpen, setIsOpen] = useState(false);
 
@@ -21,7 +22,7 @@ const MobileNavigation = () => {
   };
   return (
     <>
-      <div onClick={toggleMenu} className="md:hidden">
+      <div onClick={toggleMenu} className="md:hidden cursor-pointer">
         <Link href="/signin" className="flex gap-2">
           <div className="text-3xl  ">
             <IoMenu />
@@ -55,7 +56,7 @@ const MobileNavigation = () => {
                   <Link
                     key={item.title}
                     href={item.href}
-                    className="flex items-center gap-2 relative group py-2 px-4 text-sm text-white hover:text-green-400  font-semibold transition-all duration-100">
+                    className="flex items-center gap-2 relative group pt-5 pb-1 px-4 text-sm text-white hover:text-green-400  font-semibold transition-all duration-100">
                     <span className="w-2.5 h-2.5  bg-gray-900 rounded-full border-2 border-gray-400 inline-flex group-hover:border-green-500" />
                     {item.title}
                     <span
@@ -66,6 +67,7 @@ const MobileNavigation = () => {
               </div>
             </div>
             <div className="mt-4"></div>
+            <SocialLink />
           </DialogPanel>
         </div>
       </Dialog>

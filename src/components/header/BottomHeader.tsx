@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const BottomHeader = () => {
   return (
-    <div className="border-b border-b-gray-400">
+    <div className="border-b hidden md:block border-b-gray-400">
       <Container className="flex items-center justify-between py-1">
         <div className="flex">
           {navItems.map((item) => (
