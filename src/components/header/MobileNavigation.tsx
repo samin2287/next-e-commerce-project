@@ -23,11 +23,11 @@ const MobileNavigation = () => {
   return (
     <>
       <div onClick={toggleMenu} className="md:hidden cursor-pointer">
-        <Link href="/signin" className="flex gap-2">
+        <div className="flex gap-2 cursor-pointer">
           <div className="text-3xl  ">
             <IoMenu />
           </div>
-        </Link>
+        </div>
       </div>
       <Dialog
         open={isOpen}
