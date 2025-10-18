@@ -1,10 +1,9 @@
 import React from "react";
 import Container from "./Container";
 import { banner } from "@/constants";
-import Link from "next/link";
-import { FaArrowRightLong } from "react-icons/fa6";
 import Image from "next/image";
-
+import { FaArrowRight } from "react-icons/fa6";
+import Button from "./Button";
 const Banner = () => {
   return (
     <div className="bg-[#115061] py-20 text-white">
@@ -23,12 +22,10 @@ const Banner = () => {
               <span className="text-[#FFB800]">{banner?.offerPrice}</span>{" "}
               {banner?.textTwo}
             </p>
-            <Link
-              href={banner.buttonLink}
-              className="inline-flex items-center gap-2 bg-white text-black border border-gray-300 mt-6 sm:mt-8 md:mt-10 text-sm sm:text-md md:text-lg font-bold py-2.5 sm:py-3 px-4 sm:px-5 md:px-6 rounded-md hover:bg-[#115061] hover:text-white transition-all duration-300 shadow-sm group">
-              {banner.buttonText}
-              <FaArrowRightLong className="text-lg transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
+            <Button href={banner?.buttonLink} className="mt-6">
+              Shop now
+              <FaArrowRight />
+            </Button>
           </div>
           <div className="col-span-2 col-start-3 md:justify-end flex justify-center items-center">
             {" "}
