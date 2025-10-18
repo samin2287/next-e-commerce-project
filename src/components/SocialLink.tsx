@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import * as Icons from "react-icons/fa6";
+import Link from "next/link";
 
 interface SocialLink {
   id: number;
@@ -48,7 +49,7 @@ const SocialLinks: React.FC = () => {
       {socialLinks.map(({ id, name, url, icon }) => {
         const Icon = (Icons as any)[icon];
         return (
-          <a
+          <Link
             key={id}
             href={url}
             target="_blank"
@@ -56,7 +57,7 @@ const SocialLinks: React.FC = () => {
             title={name}
             className="w-8 h-8 flex mt-5 items-center justify-center rounded-full ring-1 ring-gray-600 text-gray-600 hover:text-green-700 hover:ring-green-300 transition-all duration-300">
             <Icon className="text-xl" />
-          </a>
+          </Link>
         );
       })}
     </div>
