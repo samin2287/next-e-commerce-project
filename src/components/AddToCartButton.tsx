@@ -3,8 +3,9 @@ import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 interface AddToCartButtonProps {
   className?: string;
+  product?: string;
 }
-const AddToCartButton = ({ className }: AddToCartButtonProps) => {
+const AddToCartButton = ({ className, product }: AddToCartButtonProps) => {
   return (
     <button
       className={twMerge(

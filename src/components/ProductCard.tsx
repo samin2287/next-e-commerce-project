@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import CardSideBar from "./CardSideBar";
 import ProductPrice from "./ProductPrice";
-import Button from "./Button";
 import AddToCartButton from "./AddToCartButton";
 interface ProductCardProps {
   product: any;
@@ -11,7 +10,11 @@ interface ProductCardProps {
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <div className="border border-gray-400 hover:shadow-lg hover:shadow-black/30 rounded-md px-3 py-5 duration-200 group overflow-hidden relative">
-      <Link href="/products">
+      <Link
+        href={{
+          pathname: `/products/${product?.id}`,
+          query: { id: product?.id },
+        }}>
         <Image
           src={product?.images[0]}
           alt={product?.title}
@@ -36,7 +39,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <p className="text-gray-600">{product?.rating}</p>
         <p className="text-gray-600">{product?.brand}</p>
         <p className="text-gray-600">{product?.availabilityStatus}</p>
-        <AddToCartButton />
+        <AddToCartButton product={product} />
       </div>
     </div>
   );
