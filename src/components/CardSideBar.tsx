@@ -1,11 +1,9 @@
 import React from "react";
 import {
-  MdOutlineFavorite,
   MdOutlineFavoriteBorder,
   MdOutlineRemoveRedEye,
   MdOutlineShoppingCart,
 } from "react-icons/md";
-
 const CardSideBar = () => {
   return (
     <div className="absolute top-15 right-1 flex flex-col gap-1 transform translate-x-20 group-hover:translate-x-0  duration-300 z-40">
@@ -21,5 +19,4 @@ const CardSideBar = () => {
     </div>
   );
 };
-
 export default CardSideBar;

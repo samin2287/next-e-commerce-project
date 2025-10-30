@@ -16,9 +16,9 @@ const Footer = () => {
         <div>
           {" "}
           <Link href="/">
-            <Image src={logo} alt="logo" />
+            <Image src={logo} alt="logo" height={200} width={200} />
           </Link>
-          <p className="py-5">
+          <p className="pb-5">
             We are a team of designers and developers that create high quality
             WordPress
           </p>
@@ -70,7 +70,7 @@ const Footer = () => {
           <div className="mt-3">
             <p className="text-base flex items-center gap-x-3 text-gray-600">
               <MdEmail />
-              shofy@suppert.com
+              digitalshop@support.com
             </p>
             <p className="text-base flex items-center gap-x-3 text-gray-600">
               <MdLocationPin />

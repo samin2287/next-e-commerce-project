@@ -1,4 +1,4 @@
-import Banner from "@/components/Banner";
+import Container from "@/components/Container";
 import ProductList from "@/components/ProductList";
 import { getdata } from "@/helpers/index";
 
@@ -7,7 +7,9 @@ export default async function Home() {
   const { products } = await getdata(endpoint);
   return (
     <main>
-      <Banner />
+      <Container>
+        <h1 className="text-4xl text-gray-800 font-bold pt-8"> All Products</h1>
+      </Container>
       <ProductList products={products} />
     </main>
   );

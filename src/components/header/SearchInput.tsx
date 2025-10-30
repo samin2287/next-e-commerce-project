@@ -20,7 +20,7 @@ const SearchInput = () => {
           className="absolute right-12 top-1/2 transform -translate-y-1/2 cursor-pointer text-xl hover:text-red-600"
         />
       )}
-      <span className="absolute h-10 w-10 text-2xl bg-green-500 right-0 top-0 flex items-center justify-center text-white cursor-pointer hover:bg-green-400 duration-200">
+      <span className="absolute h-10 w-10 border-2 border-themeColor text-2xl bg-green-500 right-0 top-0 flex items-center justify-center text-white cursor-pointer hover:bg-green-400 duration-200">
         <IoMdSearch />
       </span>
     </div>
