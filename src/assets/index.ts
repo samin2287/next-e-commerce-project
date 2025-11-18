@@ -1,3 +1,5 @@
-import logo from "./logo/main_logo.png";
-
-export { logo };
+import logo from "./logo/logo.png";
+import banner from "./banners/banner-image.png";
+export { logo, banner };
+import payment from "./logo/payment.png";
+export { payment };

@@ -16,9 +16,9 @@ const Footer = () => {
         <div>
           {" "}
           <Link href="/">
-            <Image src={logo} alt="logo" height={200} width={200} />
+            <Image src={logo} alt="logo" width={200} height={200} />
           </Link>
-          <p className="pb-5">
+          <p className="py-5">
             We are a team of designers and developers that create high quality
             WordPress
           </p>
@@ -30,7 +30,8 @@ const Footer = () => {
             <Link
               key={item.title}
               href={item.href}
-              className=" group flex  py-1 items-center text-sm text-gray-700 hover:text-green-400  font-semibold transition-all duration-100">
+              className=" group flex  py-1 items-center text-sm text-gray-700 hover:text-green-400  font-semibold transition-all duration-100"
+            >
               <span className="w-1.5 h-1.5 mr-2 bg-gray-500 rounded-full   inline-flex group-hover:bg-green-500" />
               {item.title}
             </Link>
@@ -42,7 +43,8 @@ const Footer = () => {
             <Link
               key={item.title}
               href={item.href}
-              className=" group flex  py-1 items-center text-sm text-gray-700 hover:text-green-400  font-semibold transition-all duration-100">
+              className=" group flex  py-1 items-center text-sm text-gray-700 hover:text-green-400  font-semibold transition-all duration-100"
+            >
               <span className="w-1.5 h-1.5 mr-2 bg-gray-500 rounded-full   inline-flex group-hover:bg-green-500" />
               {item.title}
             </Link>
@@ -54,7 +56,8 @@ const Footer = () => {
             <Link
               key={item.title}
               href={item.href}
-              className="group flex py-1 items-center text-sm text-gray-700 hover:text-green-500 font-semibold transition-all duration-100">
+              className="group flex py-1 items-center text-sm text-gray-700 hover:text-green-500 font-semibold transition-all duration-100"
+            >
               <span className="w-1.5 h-1.5 mr-2 bg-gray-500 rounded-full inline-flex group-hover:bg-green-500" />
               {item.title}
             </Link>
@@ -70,7 +73,7 @@ const Footer = () => {
           <div className="mt-3">
             <p className="text-base flex items-center gap-x-3 text-gray-600">
               <MdEmail />
-              digitalshop@support.com
+              digitalshop@suppert.com
             </p>
             <p className="text-base flex items-center gap-x-3 text-gray-600">
               <MdLocationPin />

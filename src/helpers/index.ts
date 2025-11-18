@@ -8,3 +8,5 @@ export const getdata = async (endpoint: string) => {
   const data = await res.json();
   return data;
 };
+
+

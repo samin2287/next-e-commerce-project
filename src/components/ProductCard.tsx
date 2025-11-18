@@ -8,6 +8,8 @@ interface ProductCardProps {
   product: any;
 }
 const ProductCard = ({ product }: ProductCardProps) => {
+
+  
   return (
     <div className="border border-gray-400 hover:shadow-lg hover:shadow-black/30 rounded-md px-3 py-5 duration-200 group overflow-hidden relative">
       <Link

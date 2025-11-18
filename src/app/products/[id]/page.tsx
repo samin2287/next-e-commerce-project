@@ -9,6 +9,8 @@ import { IoMdStar } from "react-icons/io";
 import { FaRegEye } from "react-icons/fa";
 import PriceFormat from "@/components/PriceFormat";
 import AddToCartButton from "@/components/AddToCartButton";
+import Image from "next/image";
+import { payment } from "@/assets";
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -103,8 +105,45 @@ const SingleProductPage = async ({ params }: Props) => {
               ))}
             </span>
           </p>
-          <AddToCartButton product={product} />
+          <AddToCartButton
+            product={product}
+            className="rounded-full uppercase py-2 cursor-pointer"
+          />
+          <div className="flex items-center justify-center">
+            <Image
+              src={payment}
+              alt="Payment Methods"
+              className="w-full max-w-xs rounded-xl cursor-pointer "
+            />
+          </div>
         </div>
+      </div>
+      <div className="p-10 bg-[#f7f7f7] md:col-span-2 flex items-center gap-10">
+        {product?.reviews?.map((item) => (
+          <div
+            key={item?.reviewerName}
+            className="bg-white/80 p-5 border-[1px] border-amber-400 rounded-md hover:border-amber-600 hover:bg-white duration-200 flex flex-col gap-1">
+            <p>{item?.comment}</p>
+            <div className="text-xs">
+              <p className="font-semibold">{item?.reviewerName}</p>
+              <p>{item?.reviewerEmail}</p>
+            </div>
+            <div className="flex items-center">
+              <div className="flex items-center">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <IoMdStar
+                    key={index}
+                    className={`${
+                      index < item?.rating
+                        ? "text-yellow-500"
+                        : "text-lightText"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </Container>
   );

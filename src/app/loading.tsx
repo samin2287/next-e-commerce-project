@@ -2,10 +2,6 @@ import MainLoader from "@/components/MainLoader";
 import React from "react";
 
 const loading = () => {
-  return (
-    <div>
-      <MainLoader />
-    </div>
-  );
+  return <MainLoader />;
 };
 export default loading;
