@@ -30,7 +30,7 @@ const AddToCartButton = ({ product, className }: AddToCartButtonProps) => {
 
   return isInCart ? (
     <Link
-      href="/"
+      href="/cart"
       className={twMerge(
         "flex items-center py-1 justify-center bg-blue-400 w-full rounded-md text-xl font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300",
         className

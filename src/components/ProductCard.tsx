@@ -4,44 +4,67 @@ import Link from "next/link";
 import CardSideBar from "./CardSideBar";
 import ProductPrice from "./ProductPrice";
 import AddToCartButton from "./AddToCartButton";
-interface ProductCardProps {
-  product: any;
-}
-const ProductCard = ({ product }: ProductCardProps) => {
+import { ProductType } from "../../type";
+import { CiStar } from "react-icons/ci";
 
-  
+interface ProductCardProps {
+  product: ProductType;
+}
+
+const ProductCard = ({ product }: ProductCardProps) => {
+  const imageSrc =
+    product.images?.[0] || product.thumbnail || "/assets/logo/placeholder.png";
+
   return (
-    <div className="border border-gray-400 hover:shadow-lg hover:shadow-black/30 rounded-md px-3 py-5 duration-200 group overflow-hidden relative">
+    <div className="relative rounded-3xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group">
       <Link
         href={{
           pathname: `/products/${product?.id}`,
           query: { id: product?.id },
-        }}>
-        <Image
-          src={product?.images[0]}
-          alt={product?.title}
-          height={500}
-          width={500}
-          priority={true}
-          className="w-full h-64  object-contain hover:scale-110 transition-all duration-300"
-        />
+        }}
+        className="block">
+        <div className="relative flex h-56 w-full items-center justify-center rounded-2xl bg-gray-50 overflow-hidden">
+          <Image
+            src={imageSrc}
+            alt={product?.title}
+            height={320}
+            width={320}
+            priority={false}
+            className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+          />
+          <span className="absolute top-3 left-3 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-green-600 shadow">
+            {product?.availabilityStatus || "In stock"}
+          </span>
+        </div>
       </Link>
-      <CardSideBar />
-      <div className="pt-2 border-t border-gray-200">
-        <p className=" absolute top-3 right-3 font-semibold bg-green-700 text-gray-100 px-3 py-1  w-max mb-2 rounded-bl-2xl rounded-tr-2xl">
-          {product?.discountPercentage}%
-        </p>
-        <p className="text-gray-600 font-semibold text-md capitalize line-clamp-1">
-          {product?.brand}
-        </p>
-        <h2 className="text-lg font-bold capitalize line-clamp-2">
+
+      <CardSideBar product={product} />
+
+      <div className="mt-4 space-y-2">
+        <div className="flex items-center gap-2 text-sm text-gray-500">
+          <span className="font-semibold text-gray-900 uppercase tracking-wide">
+            {product?.brand}
+          </span>
+          <span className="inline-flex items-center gap-1 rounded-full bg-yellow-50 px-2 py-0.5 text-xs text-yellow-700 font-semibold">
+            <CiStar className="text-base" />
+            {product?.rating.toFixed(1)}
+          </span>
+        </div>
+        <h2 className="text-lg font-bold leading-tight text-gray-900 line-clamp-2">
           {product?.title}
         </h2>
+        <p className="text-sm text-gray-500 line-clamp-2">
+          {product?.description}
+        </p>
         <ProductPrice product={product} />
-        <p className="text-gray-600">{product?.rating}</p>
-        <p className="text-gray-600">{product?.availabilityStatus}</p>
-        <AddToCartButton product={product} />
       </div>
+
+      <div className="mt-4 flex items-center justify-between text-xs text-gray-500">
+        <span>Min qty: {product?.minimumOrderQuantity}</span>
+        <span>{product?.warrantyInformation}</span>
+      </div>
+
+      <AddToCartButton product={product} className="mt-4" />
     </div>
   );
 };
