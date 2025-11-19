@@ -1,5 +1,6 @@
 "use client";
 
+import Container from "@/components/Container";
 import Link from "next/link";
 
 interface Props {
@@ -10,16 +11,15 @@ export default function CategoryList({ categories }: Props) {
   if (!categories || categories.length === 0) return null;
 
   return (
-    <div className="w-full p-4">
-      <h3 className="text-lg font-semibold mb-3">Categories</h3>
-
-      <div className="grid grid-cols-2 gap-3">
+    <Container>
+      <div className="w-full p-4">
+      <h3 className="text-2xl font-bold mb-3 text-gray-800">Categories</h3>
+<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3">
         {categories
           .filter(Boolean)
           .map((cat, idx) => {
             const label = typeof cat === "string" ? cat : cat?.name || cat?.slug || String(cat);
             const key = `${label}-${idx}`;
-
             return (
               <Link
                 key={key}
@@ -33,5 +33,6 @@ export default function CategoryList({ categories }: Props) {
           })}
       </div>
     </div>
+    </Container>
   );
 }

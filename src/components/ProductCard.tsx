@@ -31,15 +31,14 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <p className=" absolute top-3 right-3 font-semibold bg-green-700 text-gray-100 px-3 py-1  w-max mb-2 rounded-bl-2xl rounded-tr-2xl">
           {product?.discountPercentage}%
         </p>
-        <p className="text-gray-600 font-semibold capitalize line-clamp-1">
-          {product?.category}
+        <p className="text-gray-600 font-semibold text-md capitalize line-clamp-1">
+          {product?.brand}
         </p>
         <h2 className="text-lg font-bold capitalize line-clamp-2">
           {product?.title}
         </h2>
         <ProductPrice product={product} />
         <p className="text-gray-600">{product?.rating}</p>
-        <p className="text-gray-600">{product?.brand}</p>
         <p className="text-gray-600">{product?.availabilityStatus}</p>
         <AddToCartButton product={product} />
       </div>

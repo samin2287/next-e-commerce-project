@@ -3,7 +3,7 @@ import ProductList from "@/components/ProductList";
 import Pagination from "@/components/Pagination";
 import CategorySelector from "./CategoryList";
 import { getdata } from "@/helpers/index";
-
+import Container from "@/components/Container";
 export default async function Page({
   searchParams,
 }: {
@@ -41,17 +41,16 @@ export default async function Page({
   const totalPages = Math.max(1, Math.ceil(total / limit));
 
   return (
-    <main>
-      <div className="px-6">
-        <h1 className="text-3xl font-bold pt-6">Category: {category}</h1>
-      </div>
+    <Container>
+      
 
-      <div className="px-6 py-6 grid grid-cols-1 md:grid-cols-4 gap-6">
-        <aside className="md:col-span-1">
+        <aside className="grid grid-rows-1 grid-cols-1">
           <CategorySelector categories={categories} />
         </aside>
+        <h1 className="text-xl font-bold pt-4 text-gray-700">Category: {category}</h1>
+      <div className="px-6 py-2 grid grid-cols-1 md:grid-cols-4 gap-6">
 
-        <section className="md:col-span-3">
+        <section className="md:col-span-4">
           <ProductList products={products} />
 
           <div className="mt-6">
@@ -59,6 +58,6 @@ export default async function Page({
           </div>
         </section>
       </div>
-    </main>
+    </Container>
   );
 }

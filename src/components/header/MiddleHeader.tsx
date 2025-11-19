@@ -7,11 +7,10 @@ import Link from "next/link";
 import { FaUserCircle } from "react-icons/fa";
 import HeaderIcons from "./HeaderIcons";
 import MobileNavigation from "./MobileNavigation";
-
 const MiddleHeader = () => {
   return (
     <div className="border-b-[1px] border-b-gray-700">
-      <Container className="py-5 flex items-center gap-4 md:gap-6 lg:gap-20 justify-between">
+      <Container className=" flex items-center gap-4 md:gap-6 lg:gap-20 justify-between">
         <Link href="/">
           <Image src={logo} alt="logo" className="w-28 " />
         </Link>
@@ -33,5 +32,4 @@ const MiddleHeader = () => {
     </div>
   );
 };
-
 export default MiddleHeader;

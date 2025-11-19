@@ -22,7 +22,6 @@ export default async function Home({
   const products = data?.products ?? [];
   const total = data?.total ?? products.length;
   const totalPages = Math.max(1, Math.ceil(total / limit));
-
   return (
     <div>
        <Container><h2 className="text-4xl text-gray-800 font-bold pt-10 ">
