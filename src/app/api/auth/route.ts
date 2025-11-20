@@ -21,7 +21,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ message: data?.message || 'Authentication failed' }, { status: resp.status });
     }
 
-    // return token and user data
+
     return NextResponse.json({ success: true, data }, { status: 200 });
   } catch (err: any) {
     return NextResponse.json({ message: err?.message || 'Server error' }, { status: 500 });

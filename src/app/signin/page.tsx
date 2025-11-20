@@ -31,13 +31,11 @@ export default function SigninPage() {
         return;
       }
 
-      // store token (for demo) and redirect
       const token = data?.data?.token;
       if (token) {
         try { localStorage.setItem("token", token); } catch {}
       }
 
-      // redirect to home or dashboard
       router.push("/");
     } catch (err: any) {
       setError(err?.message || "Server error");
@@ -57,7 +55,7 @@ export default function SigninPage() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             placeholder="username"
-            className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition"
+            className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-green-500 transition"
             type="text"
             required
           />
@@ -67,7 +65,7 @@ export default function SigninPage() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
-            className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition"
+            className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-green-500 transition"
             type="password"
             required
           />
@@ -75,12 +73,11 @@ export default function SigninPage() {
           {error && <div className="text-sm text-red-400 mb-2">{error}</div>}
 
           <div className="flex items-center justify-between flex-wrap">
-            <a className="text-sm text-blue-400 hover:underline mb-0.5" href="#">Forgot password?</a>
-            <p className="text-white mt-4"> Don't have an account? <a className="text-sm text-blue-400 hover:underline mt-4" href="#">Signup</a></p>
+            <p className="text-white mt-4"> Don't have an account? <a className="text-sm text-blue-400 hover:underline mt-4" href="/signup">Signup</a></p>
           </div>
 
           <button
-            className="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 transition"
+            className="bg-gradient-to-r from-green-500 to-green-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-green-600 transition"
             type="submit"
             disabled={loading}
           >

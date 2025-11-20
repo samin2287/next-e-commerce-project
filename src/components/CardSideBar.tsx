@@ -56,7 +56,7 @@ const CardSideBar = ({ product }: CardSideBarProps) => {
         onClick={handleToggleFavorite}
         className="p-1 border border-gray-100 rounded-md bg-gray-100 hover:bg-white">
         {isFavorite ? (
-          <MdOutlineFavorite className="text-4xl text-red-500 duration-200" />
+          <MdOutlineFavorite className="text-4xl text-green-500 duration-200" />
         ) : (
           <MdOutlineFavoriteBorder className="text-4xl hover:text-green-500 duration-200" />
         )}

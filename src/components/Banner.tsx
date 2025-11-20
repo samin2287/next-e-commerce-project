@@ -29,15 +29,7 @@ const Banner = () => {
               <FaArrowRight />
             </Button>
           </div>
-          <div className="col-span-2 col-start-3 md:justify-end flex justify-center items-center">
-            {" "}
-            <Image
-              src={banner.image}
-              alt={banner.title}
-              className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-md drop-shadow-lg"
-              priority
-            />
-          </div>
+         
         </div>
       </Container>
     </div>
